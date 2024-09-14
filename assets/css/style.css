@@ -1,0 +1,686 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+    background-image: url(../images/bg-body.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+a{
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+.btn{
+    padding: 20px;
+    background-color: #26CC35;
+    border-radius: 50px;
+    min-width: 150px;
+}
+.btn-padding-large{
+    min-width: 200px;
+    padding-block: 30px;
+}
+.btn:hover{
+    background-color: #1f1d46;
+    transition: all ease-in 0.5s;
+}
+.caroussel{
+    position: relative;
+    margin-top: 50px;
+}
+.caroussel .next-or-previous-btn{
+    padding: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    background-color: #26CC35;
+    transform: translateY(-50%);
+    z-index: 5;
+}
+.caroussel .next-or-previous-btn:hover{
+    background-color: #1f1d46;
+    transition: all ease-in 0.5s;
+} 
+.caroussel .previous-button{
+    left: 0;
+}
+.caroussel .next-button{
+    right: 0;
+}
+.caroussel .caroussel-items{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100%;
+}
+.caroussel .caroussel-items .caroussel-item{
+    display: none !important;
+    transition: 5s;
+}
+.caroussel .caroussel-items .caroussel-item.active{
+    display: flex !important;
+    transition: 5s;
+}
+section{
+    padding-block: 40px;
+    text-align: center;
+    font-size: 17px;
+    padding-inline: 30px;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
+nav ul li a{
+    color: #fff;
+    transition: 0.5s ease;
+    font-weight: bold;
+    font-size: 25px;
+}
+nav ul li a.active{
+    color: #26CC35;
+}
+nav ul li a:hover{
+    color: #26CC35;
+}
+section .section-title{
+    font-size: 50px;
+}
+section .section-description{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    max-width: 65%;
+    margin-inline: auto;
+    text-align: center;
+}
+header > div:first-child{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header > div:first-child > div{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+header .logo img{
+    width: 140px;
+    height: 50px;
+    object-fit: cover;
+}
+header #menu-bar{
+    width: 35px;
+    height: 5px;
+    background-color: #1f1d46;
+    position: relative;
+    cursor: pointer;
+}
+header #menu-bar::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: -7px;
+    left: 0;
+    background-color: #1f1d46;
+}
+header #menu-bar::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    bottom: -7px;
+    left: 0;
+    background-color: #1f1d46;
+}
+header h1{
+    font-size: 50px;
+    text-transform: uppercase;
+    text-align: center;
+}
+header #welcome-text{
+    position: relative;
+    width: 75%;
+    margin: auto;
+    color: #fff;
+}
+header #welcome-text p{
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+header #welcome-text img{
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    top: -100px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+header nav{
+    position: fixed;
+    padding: 30px;
+    top: 0;
+    left: -100%;
+    bottom: 0;
+    background-color: #1f1d46;
+    width: 250px;
+    box-shadow: 0 0 30px #1f1d46;
+    z-index: 10;
+    transition: left 2s;
+}
+header nav ul{
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 30px;
+}
+header nav ul a{
+    font-weight: normal;
+}
+header nav #close-side-bar{
+    height: 30px;
+    width: 40px;
+    margin-left: auto;
+    margin-bottom: 30px;
+    position: relative;
+    cursor: pointer;
+}
+header nav #close-side-bar::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 20px;
+    transform: rotate(45deg);
+    height: 5px;
+    background-color: #fff;
+}
+header nav #close-side-bar::after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 20px;
+    transform: rotate(-45deg);
+    height: 5px;
+    background-color: #fff;
+}
+header nav.open{
+    left: 0;
+    transition: left 1s;
+    /* animation: animation_of_sidebar 5s ease-in forwards; */
+}
+#acceuil .caroussel{
+    width: 90%;
+    margin-inline: auto;
+}
+#acceuil .caroussel .caroussel-items .caroussel-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    flex-direction: column;
+}
+#acceuil .caroussel .caroussel-items .caroussel-item img{
+    border: 80px solid #26CC35;
+    border-radius: 50%;
+    width: 370px;
+    height: 370px;
+    object-fit: cover;
+}
+#our-sports-games #games-presentation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    /* width: 60%; */
+    margin-inline: auto;
+    margin-block: 50px;
+    overflow: hidden;
+}
+#our-sports-games #games-presentation .game{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+#our-sports-games #games-presentation .game img{
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00000051;
+}
+#our-sports-games #games-presentation .game:nth-child(odd) img{
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+}
+#our-sports-games #games-presentation .game:nth-child(even) img{
+    border: 40px solid #1f1d46;
+    width: 550px;
+    height: 550px;
+    object-fit: cover;
+}
+#our-sports-games #games-presentation .game h2{
+    font-size: 30px;
+    text-transform: uppercase;
+}
+#our-sports-games #games-presentation .game:nth-child(odd) h2{
+    color: #26cc35;
+}
+#our-sports-games #games-presentation .game p{
+    line-height: 30px;
+    text-align: center;
+    max-width: 250px;
+}
+#about-our-club > div{
+    position: relative;
+    width: 100%;
+    margin: auto;
+}
+#about-our-club > div > img{
+    width: 100%;
+    max-width: 1100px;
+}
+#about-our-club > div a{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#tranners-presentation .caroussel{
+    width: 65%;
+    margin: auto;
+}
+#tranners-presentation .one-tranner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+#tranners-presentation .one-tranner img{
+    border-radius: 50%;
+    width: 600px;
+    height: 600px;
+    object-fit: cover;
+}
+#tranners-presentation .one-tranner .tranner-informations .tranner-name{
+    font-size: 31px;
+}
+#tranners-presentation .one-tranner .tranner-informations p{
+    font-size: 23px;
+    color: #26cc35;
+    font-weight: bold;
+}
+#tranners-presentation .one-tranner .tranner-social-links{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+#tranners-presentation .one-tranner .tranner-social-links a{
+    color: #000;
+    font-weight: bold;
+}
+#join-our-club .join-links{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
+    margin-block: 80px;
+}
+#join-our-club .join-links a{
+    min-width: 330px;
+    text-transform: uppercase;
+}
+footer{
+    max-height: 420px;
+    overflow: hidden;
+}
+#footer{
+    color: #fff;
+    background-color: #000;
+    border-radius: 1000px;
+    padding-top: 70px;
+    min-height: 750px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* transform: translateY(50%); */
+    gap: 30px;
+}
+#footer h2{
+    font-size: 26px;
+    text-transform: capitalize;
+}
+#footer .yogast-social-links{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+#footer .yogast-social-links a{
+    font-size: 25px;
+}
+#footer .contact-credentials{
+    display: flex;
+    gap: 30px;
+}
+#footer .contact-credentials a{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+#footer .contact-credentials a i{
+    font-size: 25px;
+}
+#footer hr{
+    width: 60%;
+    opacity: 0.2;
+    margin-block: 10px;
+}
+#footer .copyrigth{
+    font-size: 20px;
+}
+
+
+#contact-form{
+    box-shadow: 0 0 3px #0000003c;
+    margin-block: 20px;
+    padding-inline: 20%;
+}
+#contact-form form div{
+    margin-block: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+#contact-form input,#contact-form textarea{
+    padding: 20px 30px;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 30px #00000044;
+    min-width: 450px;
+    flex: 1;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+#contact-form input:first-child,#contact-form textarea{
+    min-width: 100%;
+}
+#contact-form button{
+    display: block;
+    margin-inline: auto;
+    padding-block: 15px;
+    font-size: 1.2em;
+    width: 250px;
+    text-align: center;
+    background-color: #26CC35;
+    color: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+
+
+
+@keyframes animation_of_sidebar {
+    0%{
+        left: -100%;
+    }
+    100%{
+        left: 0;
+    }
+}
+
+
+
+
+@media all and (max-width : 1170px) {
+    #our-sports-games #games-presentation .game:nth-child(odd) img{
+        width: 220px;
+        height: 220px;
+        object-fit: cover;
+    }
+    #our-sports-games #games-presentation .game:nth-child(even) img{
+        width: 500px;
+        height: 500px;
+        object-fit: cover;
+    }
+    #footer nav ul{
+        gap: 20px;
+    }
+    #footer nav ul li a{
+        font-size: 15px;
+    }
+
+
+    #contact-form{
+        padding-inline: 10%;
+    }
+    #contact-form input,#contact-form textarea{
+        min-width: 400px;
+    }
+}
+@media all and (max-width : 850px){
+    header #welcome-text{
+        width: 60%;
+    }
+    #our-sports-games #games-presentation .game:nth-child(odd) img{
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+    }
+    #our-sports-games #games-presentation .game:nth-child(even) img{
+        width: 400px;
+        height: 400px;
+        object-fit: cover;
+    }
+    #tranners-presentation .caroussel{
+        width: 100%;
+    }
+    #join-our-club .join-links a{
+        min-width: 250px;
+    }
+    #footer{
+        border-radius: 300px;
+    }
+    #acceuil .caroussel .caroussel-items .caroussel-item img{
+        border: 30px solid #26CC35;
+    }
+}
+@media all and (max-width : 800px){
+    section{
+        padding-inline: 10px;
+    }
+    section .section-description{
+        max-width: 80%;
+    }
+    #our-sports-games #games-presentation .game:nth-child(odd) img{
+        width: 170px;
+        height: 170px;
+        object-fit: cover;
+    }
+    #our-sports-games #games-presentation .game:nth-child(even) img{
+        width: 290px;
+        height: 290px;
+        object-fit: cover;
+    }
+    #our-sports-games #games-presentation{
+        gap: 20px;
+    }
+    #join-our-club .join-links a{
+        min-width: 200px;
+    }
+    #footer{
+        border-radius: 250px;
+    }
+    #acceuil .caroussel .caroussel-items .caroussel-item img{
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+    }
+    header #welcome-text{
+        width: 100%;
+        position: static;
+    }
+    header #welcome-text h1{
+        font-size: 37px;
+    }
+    header #welcome-text{
+        padding-block: 40px;
+    }
+    header #welcome-text img{
+        top: 0;
+        width: 60%;
+        left: 20%;
+        /* right: 18%; */
+        /* position: ; */
+        /* transform: translate(0%,0); */
+    }
+    header #welcome-text p{
+        width: 60%;
+        margin-inline: auto;
+        margin-top: 30px;
+    }
+}
+@media all and (max-width : 750px){
+    #our-sports-games #games-presentation .game p{
+        max-width: none;
+    }
+    #our-sports-games #games-presentation img{
+        width: 400px !important;
+        height: 400px !important;
+        object-fit: cover;
+    }
+    #our-sports-games #games-presentation .game:nth-child(even) img{
+        border: 10px solid #1f1d46;
+    }
+    section .section-description{
+        max-width: none;
+        font-size: 20px;
+    }
+    #about-our-club > div > a > img{
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+    #tranners-presentation .one-tranner img{
+        width: 370px;
+        height: 370px;
+        object-fit: cover;
+    }
+    footer{
+        max-height: none;
+    }
+    #footer{
+        border-radius: 0;
+        min-height: 0;
+        padding-bottom: 30px;
+    }
+    #footer nav{
+        margin-block: 20px;
+    }
+    #join-our-club .join-links{
+        flex-direction: column;
+    }
+    #join-our-club .join-links a{
+        width: 100%;
+        max-width: 350px;
+    }
+    #footer > div.contact-credentials{
+        width: calc(100% - 30px);
+        flex-direction: column;
+        align-items: flex-start;
+        margin-inline: auto;
+    }
+}
+@media all and (max-width : 600px){
+    section .section-title{
+        font-size: 40px;
+    }
+    section .section-description{
+        text-align: center;
+    }
+    header #welcome-text{
+        margin-top: 30px;
+        position: relative;
+        width: 90%;
+        background-image: url(../images/bbnner.png);
+        background-position: center;
+        padding: 20px;
+        padding-bottom: 100px;
+        height: fit-content;
+        margin-bottom: -25%;
+    }
+    header #welcome-text img{
+        width: 100%;
+        height: 100%;
+        display: none;
+        top: 0;
+        left: 0;
+    }
+    #our-sports-games #games-presentation{
+        flex-wrap: wrap;
+    }
+    #our-sports-games #games-presentation img{
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 400px !important;
+        max-height: 400px !important;
+        object-fit: cover;
+    }
+    footer .copyrigth{
+        padding-inline: 20px;
+        font-size: 15px !important;
+    }
+    footer .copyrigth a{
+        font-size: 15px !important;
+    }
+    header #welcome-text p{
+        width: 100%;
+    }
+    #contact-form{
+        padding-inline: 20px;
+    }
+    #contact-form input,#contact-form textarea{
+        min-width: 350px;
+    }
+}
+@media all and (max-width:400px){
+    #tranners-presentation .one-tranner img{
+        width: 320px;
+        height: 320px;
+        object-fit: cover;
+    }
+    #contact-form input,#contact-form textarea{
+        min-width: 300px;
+    }
+}
+@media all and (max-width:350px){
+    #tranners-presentation .one-tranner img{
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+    }
+    #contact-form input,#contact-form textarea{
+        padding: 15px;
+        min-width: 100%;
+    }
+}
